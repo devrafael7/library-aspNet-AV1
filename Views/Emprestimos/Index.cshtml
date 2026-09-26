@@ -1,0 +1,38 @@
+@model IEnumerable<Emprestimo>
+@{
+    ViewData["Title"] = "Empréstimos";
+}
+
+<h1>Empréstimos</h1>
+
+<p><a asp-action="Create">Novo Empréstimo</a></p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Livro</th>
+            <th>Usuário</th>
+            <th>Data do Empréstimo</th>
+            <th>Data de Devolução</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Livro?.Titulo</td>
+            <td>@item.Usuario?.Nome</td>
+            <td>@item.DataEmprestimo.ToString("dd/MM/yyyy")</td>
+            <td>@(item.DataDevolucao?.ToString("dd/MM/yyyy") ?? "-")</td>
+            <td>@item.Status</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

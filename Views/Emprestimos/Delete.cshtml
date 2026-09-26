@@ -1,0 +1,17 @@
+@model Emprestimo
+@{
+    ViewData["Title"] = "Excluir Empréstimo";
+}
+
+<h1>Excluir Empréstimo</h1>
+<p>Deseja realmente excluir este empréstimo?</p>
+
+<p><strong>Livro:</strong> @Model.Livro?.Titulo</p>
+<p><strong>Usuário:</strong> @Model.Usuario?.Nome</p>
+<p><strong>Status:</strong> @Model.Status</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Confirmar exclusão</button>
+    <a asp-action="Index">Cancelar</a>
+</form>

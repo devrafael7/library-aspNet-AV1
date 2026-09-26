@@ -1,0 +1,17 @@
+@model Emprestimo
+@{
+    ViewData["Title"] = "Detalhes do Empréstimo";
+}
+
+<h1>Detalhes do Empréstimo</h1>
+
+<p><strong>Livro:</strong> @Model.Livro?.Titulo</p>
+<p><strong>Usuário:</strong> @Model.Usuario?.Nome</p>
+<p><strong>Data do Empréstimo:</strong> @Model.DataEmprestimo.ToString("dd/MM/yyyy")</p>
+<p><strong>Data de Devolução:</strong> @(Model.DataDevolucao?.ToString("dd/MM/yyyy") ?? "-")</p>
+<p><strong>Status:</strong> @Model.Status</p>
+
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</p>

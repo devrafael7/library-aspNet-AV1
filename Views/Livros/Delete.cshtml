@@ -1,0 +1,15 @@
+@model Livro
+@{
+    ViewData["Title"] = "Excluir Livro";
+}
+
+<h1>Excluir Livro</h1>
+<p>Deseja realmente excluir este livro?</p>
+
+<p><strong>@Model.Titulo</strong> - @Model.Autor</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Confirmar exclusão</button>
+    <a asp-action="Index">Cancelar</a>
+</form>

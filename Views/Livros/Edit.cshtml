@@ -1,0 +1,40 @@
+@model Livro
+@{
+    ViewData["Title"] = "Editar Livro";
+}
+
+<h1>Editar Livro</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <label asp-for="Titulo"></label>
+    <input asp-for="Titulo" />
+    <span asp-validation-for="Titulo"></span>
+    <br />
+
+    <label asp-for="Autor"></label>
+    <input asp-for="Autor" />
+    <span asp-validation-for="Autor"></span>
+    <br />
+
+    <label asp-for="ISBN"></label>
+    <input asp-for="ISBN" />
+    <span asp-validation-for="ISBN"></span>
+    <br />
+
+    <label asp-for="AnoPublicacao"></label>
+    <input asp-for="AnoPublicacao" />
+    <span asp-validation-for="AnoPublicacao"></span>
+    <br />
+
+    <label asp-for="Categoria"></label>
+    <input asp-for="Categoria" />
+    <span asp-validation-for="Categoria"></span>
+    <br />
+
+    <button type="submit">Salvar alterações</button>
+</form>
+
+<p><a asp-action="Index">Voltar</a></p>

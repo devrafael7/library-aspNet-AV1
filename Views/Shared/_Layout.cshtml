@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Biblioteca</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Início</a> |
+            <a asp-controller="Livros" asp-action="Index">Livros</a> |
+            <a asp-controller="Usuarios" asp-action="Index">Usuários</a> |
+            <a asp-controller="Emprestimos" asp-action="Index">Empréstimos</a>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <hr />
+        <p>Trabalho ASP.NET Core MVC - SQLite - Repository</p>
+    </footer>
+</body>
+</html>
